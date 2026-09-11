@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emmil Consignado | Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #07111d;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 8%;
+
+            background-color: #07111d;
+            border-bottom: 1px solid #142536;
+
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #4da6ff;
+        }
+
+        .navbar {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #4da6ff;
+        }
+
+        .resume-btn {
+            padding: 10px 20px;
+            border: 1px solid #4da6ff;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .resume-btn:hover {
+            background-color: #4da6ff;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 120px 13% 60px;
+        }
+
+        .hero-text {
+            width: 55%;
+        }
+
+        .hello {
+            color: #4da6ff;
+            letter-spacing: 5px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin: 5px 0;
+        }
+
+        .hero h1 span {
+            color: #4da6ff;
+        }
+
+        .hero h2 {
+            font-size: 21px;
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            color: #75baff;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            color: #c5d1dc;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 12px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #4da6ff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2589e8;
+        }
+
+        .btn-secondary {
+            border: 1px solid #4da6ff;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #4da6ff;
+        }
+
+
+        /* ================= PROFILE IMAGE ================= */
+
+        .hero-image {
+            width: 35%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 280px;
+            height: 280px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+            border: 2px solid #4da6ff;
+
+            box-shadow: 0 0 40px rgba(77, 166, 255, 0.25);
+        }
+
+
+        /* ================= GENERAL SECTIONS ================= */
+
+        section {
+            padding: 80px 13%;
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section-title span {
+            color: #4da6ff;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        #about {
+            background-color: #091522;
+        }
+
+        .about-text {
+            max-width: 800px;
+            color: #c5d1dc;
+        }
+
+
+        /* ================= SKILLS ================= */
+
+        .skills-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill-card {
+            background-color: #0b1826;
+
+            border: 1px solid #18324a;
+            border-radius: 10px;
+
+            padding: 25px;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #4da6ff;
+        }
+
+        .skill-card h3 {
+            color: #4da6ff;
+            margin-bottom: 15px;
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card li {
+            margin-bottom: 8px;
+            color: #c5d1dc;
+        }
+
+        .skill-card li::before {
+            content: "•";
+            color: #4da6ff;
+            margin-right: 10px;
+        }
+
+
+        /* ================= EXPERIENCE ================= */
+
+        #experience {
+            background-color: #091522;
+        }
+
+        .experience-card {
+            border-left: 2px solid #4da6ff;
+            padding-left: 25px;
+            max-width: 800px;
+        }
+
+        .experience-card h3 {
+            font-size: 20px;
+        }
+
+        .company {
+            color: #4da6ff;
+        }
+
+        .date {
+            color: #899bad;
+            margin-bottom: 15px;
+        }
+
+        .experience-card ul {
+            margin-left: 20px;
+            color: #c5d1dc;
+        }
+
+
+        /* ================= PROJECTS ================= */
+
+        .projects-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #0b1826;
+
+            border: 1px solid #18324a;
+            border-radius: 10px;
+
+            padding: 25px;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: #4da6ff;
+        }
+
+        .project-card h3 {
+            color: #4da6ff;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #c5d1dc;
+            margin-bottom: 20px;
+        }
+
+        .technology {
+            display: inline-block;
+
+            padding: 5px 10px;
+
+            background-color: #10283c;
+
+            border: 1px solid #245278;
+            border-radius: 15px;
+
+            font-size: 12px;
+
+            margin-right: 5px;
+            margin-bottom: 5px;
+
+            color: #75baff;
+        }
+
+
+        /* ================= CERTIFICATIONS ================= */
+
+        #certifications {
+            background-color: #091522;
+        }
+
+        .cert-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .cert-card {
+            background-color: #0b1826;
+
+            border: 1px solid #18324a;
+            border-radius: 10px;
+
+            padding: 25px;
+        }
+
+        .cert-card h3 {
+            color: #4da6ff;
+        }
+
+        .cert-status {
+            color: #899bad;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        #contact {
+            text-align: center;
+        }
+
+        .contact-text {
+            color: #c5d1dc;
+            margin-bottom: 30px;
+        }
+
+        .contact-links a {
+            display: inline-block;
+
+            color: #4da6ff;
+            text-decoration: none;
+
+            margin: 10px 15px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            background-color: #050d16;
+
+            color: #718395;
+
+            border-top: 1px solid #142536;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .navbar {
+                display: none;
+            }
+
+            .resume-btn {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+
+                padding: 120px 7% 50px;
+            }
+
+            .hero-text,
+            .hero-image {
+                width: 100%;
+            }
+
+            .hero-image {
+                margin-bottom: 40px;
+            }
+
+            .hero-image img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            section {
+                padding: 60px 7%;
+            }
+
+            .skills-container,
+            .projects-container,
+            .cert-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <div class="logo">
+            EC
+        </div>
+        <ul class="navbar">
+            <li>
+                <a href="#home">Home</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#certifications">Certifications</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+        <a href="resume.pdf"
+           class="resume-btn"
+           target="_blank">
+
+            Download Resume
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <p class="hello">
+                HELLO, I'M
+            </p>
+
+            <h1>
+                Emmil <span>Consignado</span>
+            </h1>
+
+            <h2>
+                BS Information Technology Graduate
+            </h2>
+
+            <p class="job-title">
+                Aspiring Cybersecurity Professional | Web Developer
+            </p>
+
+            <p class="hero-description">
+
+                I'm passionate about technology, cybersecurity,
+                and understanding how systems work.
+
+                I enjoy learning, building projects,
+                identifying weaknesses, and finding ways
+                to improve security.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects"
+                   class="btn-primary">
+
+                    View My Projects
+
+                </a>
+
+                <a href="#contact"
+                   class="btn-secondary">
+
+                    Contact Me
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <!-- Replace profile.jpg with your photo -->
+
+            <img src="profile.jpg"
+                 alt="Emmil Consignado">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <p class="about-text">
+
+            I am a BS Information Technology graduate with
+            internship experience in Controls Assurance.
+
+            I have a strong interest in cybersecurity,
+            information security, risk management,
+            compliance, and web development.
+
+            I enjoy understanding how systems work,
+            identifying weaknesses, and continuously
+            improving my technical knowledge.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+
+        <div class="skills-container">
+
+
+            <!-- CYBERSECURITY -->
+
+            <div class="skill-card">
+
+                <h3>Cybersecurity</h3>
+
+                <ul>
+
+                    <li>Information Security</li>
+
+                    <li>Risk Assessment</li>
+
+                    <li>Data Privacy</li>
+
+                    <li>Access Control</li>
+
+                    <li>MITRE ATT&CK</li>
+
+                    <li>OSINT</li>
+
+                    <li>BCP / DRP</li>
+
+                    <li>Vulnerability Assessment</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- DEVELOPMENT -->
+
+            <div class="skill-card">
+
+                <h3>Development</h3>
+
+                <ul>
+
+                    <li>HTML</li>
+
+                    <li>CSS</li>
+
+                    <li>JavaScript</li>
+
+                    <li>React.js</li>
+
+                    <li>Node.js</li>
+
+                    <li>Express.js</li>
+
+                    <li>MongoDB</li>
+
+                    <li>SQL</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- TOOLS -->
+
+            <div class="skill-card">
+
+                <h3>Tools</h3>
+
+                <ul>
+
+                    <li>Git / GitHub</li>
+
+                    <li>Visual Studio Code</li>
+
+                    <li>MongoDB Atlas</li>
+
+                    <li>Wireshark</li>
+
+                    <li>Microsoft Office</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <section id="experience">
+
+        <h2 class="section-title">
+            My <span>Experience</span>
+        </h2>
+
+
+        <div class="experience-card">
+
+            <h3>
+                Controls Assurance Intern
+            </h3>
+
+            <p class="company">
+                Deloitte Philippines
+            </p>
+
+            <p class="date">
+                Internship
+            </p>
+
+
+            <ul>
+
+                <li>
+                    Reviewed documents related to controls,
+                    data privacy, and information security.
+                </li>
+
+                <li>
+                    Prepared Minutes of Meeting and
+                    supporting documentation.
+                </li>
+
+                <li>
+                    Assisted in reviewing PII-related
+                    requirements and processes.
+                </li>
+
+                <li>
+                    Created and maintained Excel reports.
+                </li>
+
+                <li>
+                    Gained exposure to risk, compliance,
+                    controls, and information security.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            My <span>Projects</span>
+        </h2>
+
+
+        <div class="projects-container">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <h3>
+                    H2O Express
+                </h3>
+
+                <p>
+
+                    Online scheduling and ordering system
+                    designed for water refilling stations.
+
+                    The system includes booking,
+                    delivery scheduling, order management,
+                    user management, and an admin dashboard.
+
+                </p>
+
+                <span class="technology">
+                    MERN Stack
+                </span>
+
+                <span class="technology">
+                    MongoDB
+                </span>
+
+                <span class="technology">
+                    React.js
+                </span>
+
+                <span class="technology">
+                    Node.js
+                </span>
+
+            </div>
+
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <h3>
+                    Cybersecurity Lab
+                </h3>
+
+                <p>
+
+                    Personal cybersecurity laboratory
+                    for practicing security concepts,
+                    vulnerability assessment,
+                    network analysis, and documentation.
+
+                </p>
+
+                <span class="technology">
+                    Cybersecurity
+                </span>
+
+                <span class="technology">
+                    Wireshark
+                </span>
+
+                <span class="technology">
+                    Networking
+                </span>
+
+            </div>
+
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <h3>
+                    Future Project
+                </h3>
+
+                <p>
+
+                    More cybersecurity and development
+                    projects will be added as I continue
+                    expanding my practical experience.
+
+                </p>
+
+                <span class="technology">
+                    Coming Soon
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CERTIFICATIONS ================= -->
+
+    <section id="certifications">
+
+        <h2 class="section-title">
+            Certifications & <span>Education</span>
+        </h2>
+
+
+        <div class="cert-container">
+
+
+            <div class="cert-card">
+
+                <h3>
+                    BS Information Technology
+                </h3>
+
+                <p>
+                    STI College of Las Piñas
+                </p>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <h3>
+                    ISC2 Certified in Cybersecurity (CC)
+                </h3>
+
+                <p class="cert-status">
+                    Currently Preparing
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact <span>Me</span>
+        </h2>
+
+        <p class="contact-text">
+
+            I'm open to opportunities in Cybersecurity,
+            Information Technology, GRC,
+            and related entry-level roles.
+
+        </p>
+
+
+        <div class="contact-links">
+
+            <a href="mailto:YOUR_EMAIL@gmail.com">
+                Email
+            </a>
+
+            <a href="#"
+               target="_blank">
+
+                LinkedIn
+
+            </a>
+
+            <a href="#"
+               target="_blank">
+
+                GitHub
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Emmil Consignado. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

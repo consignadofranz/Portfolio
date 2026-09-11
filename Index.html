@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmil Franz | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 120px;
+            padding: 50px;
+        }
+
+        .about-text {
+            max-width: 600px;
+        }
+
+        .about-text h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+            color: #4da6ff;
+        }
+        
+       span{
+            color: #4da6ff;
+        }
+        #name {
+            font-size: 40px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: #bdbdbd;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #4da6ff;
+            box-shadow: 0 0 40px rgba(77, 166, 255, 0.25);
+        }
+        #IAM {
+            margin-top: 20px;
+        }
+
+        #button {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        #button button {
+            background-color: #4da6ff;
+            height: 40px;
+            width: 250px;
+            border: none;
+            border-radius: 7px;
+            box-shadow: 0 0 10px rgba(77, 166, 255, 0.5);
+            font-style: italic;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #button #two {
+            background-color: transparent;
+            color: white;
+            border: 2px solid #4da6ff;
+        }
+
+       .ABOUT_ME {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 50px;
+        }
+
+        .ABOUT_ME h1 {
+            font-size: 40px;
+            color: #4da6ff;
+            margin-bottom: 30px;
+        }
+
+        .ABOUT_ME p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #bdbdbd;
+            margin-bottom: 20px;
+        }
+
+        /* MOBILE POV */
+        @media (max-width: 768px) {
+
+            .container {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 40px;
+                padding: 30px;
+            }
+
+            #name {
+                font-size: 38px;
+            }
+
+            img {
+                width: 220px;
+                height: 220px;
+            }
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="AboutMe">
+        <div class="about-text">
+            <h3>Hello, I'm</h3>
+            <h1 id="name">Emmil Franz M Consignado</h1>
+            <p>BS Information Technology Graduate <br> <span >Aspiring Cybersecurity Professional | Web Developer</span></p>
+        <div id="IAM">
+            <p>I'm passionate about technology, cybersecurity, and understanding how systems work. I enjoy learning, building projects, identifying weaknesses, and finding ways to improve security.</p>
+        </div>
+        <div id="button">
+        <button onclick="window.location.href='CapstoneProject.html'">SnapShot of My Capstone Project</button>
+        <button id="two" onclick="window.location.href='Resume.html'">View My Resume</button>
+        </div>
+        </div>
+        <img src="IMAGES/RESUME PICTURE.png" alt="Profile Picture">
+    </div>
+
+    <div class="ABOUT_ME">
+    <h1>About Me</h1>
+
+    <p>I am a Bachelor of Science in Information Technology graduate with internship
+        experience in Controls Assurance, where I gained practical exposure to IT controls,
+        risk management, information security, compliance, and data privacy. During my
+        internship, I collaborated with the team in reviewing control documentation,
+        assessing access and role-related information, identifying potential control and
+        compliance concerns, and gained exposure to frameworks and standards such as
+        COBIT 2019, ISO 27001, PCI DSS, and applicable regulatory requirements.</p>
+
+    <p>My interest in cybersecurity comes from my curiosity about how systems work,
+        how weaknesses can be identified, and how organizations can better protect their
+        information and technology. I am particularly interested in cybersecurity,
+        information security, risk and compliance, and penetration testing, while
+        continuously building my knowledge of security concepts, threats, vulnerabilities,
+        access controls, and risk management.</p>
+
+    <p>Alongside cybersecurity, I also have a background in web development and
+        programming. I have worked with technologies such as HTML, CSS, JavaScript,
+        React.js, Node.js, Express.js, MongoDB, SQL, Java, and C#. Through academic
+        and personal projects, I have gained experience in designing and developing
+        web-based systems, working with databases, and solving technical problems.</p>
+
+    <p>As I begin my professional career, my goal is to continuously develop my
+        technical and analytical skills through hands-on experience, certifications,
+        personal projects, and guidance from experienced professionals. I enjoy learning
+        beyond the surface level, understanding why systems behave the way they do,
+        identifying areas for improvement, and applying what I learn to real-world
+        technology and security challenges.</p>
+</div>
+</body>
+</html>
