@@ -19,19 +19,40 @@
             font-family: Arial, sans-serif;
         }
 
+        .navbar {
+            display: flex;
+            gap: 50px;
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
         .container {
             min-height: 100vh;
-
             display: flex;
             justify-content: center;
             align-items: center;
-
             gap: 120px;
             padding: 50px;
+            width: 100%;
+            padding: 40px 20px;
         }
 
         .about-text {
             max-width: 600px;
+            
         }
 
         .about-text h3 {
@@ -90,19 +111,19 @@
             border: 2px solid #4da6ff;
         }
 
-       .ABOUT_ME {
+       #ABOUT_ME {
             max-width: 1200px;
             margin: 0 auto;
             padding: 80px 50px;
         }
 
-        .ABOUT_ME h1 {
+        #ABOUT_ME h1 {
             font-size: 40px;
-            color: #4da6ff;
+            color: white;
             margin-bottom: 30px;
         }
 
-        .ABOUT_ME p {
+        #ABOUT_ME p {
             font-size: 17px;
             line-height: 1.7;
             color: #bdbdbd;
@@ -133,6 +154,18 @@
 </head>
 
 <body>
+   <nav class="navbar">
+        <div class="logo">
+            <h1><span>EFC</span></h1>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#ABOUT_ME">About Me</a></li>
+            <li><a href="snapshot.html">Snapshot</a></li>
+            <li><a href="FILES/EMMIL FRANZ RESUME.pdf" target="_blank">Resume</a></li>
+        </ul>
+    </nav>
+
     <div class="container" id="AboutMe">
         <div class="about-text">
             <h3>Hello, I'm</h3>
@@ -142,15 +175,15 @@
             <p>I'm passionate about technology, cybersecurity, and understanding how systems work. I enjoy learning, building projects, identifying weaknesses, and finding ways to improve security.</p>
         </div>
         <div id="button">
-        <button onclick="window.location.href='CapstoneProject.html'">SnapShot of My Capstone Project</button>
-        <button id="two" onclick="window.location.href='Resume.html'">View My Resume</button>
+        <button onclick="window.location.href='snapshot.html'">SnapShot of My Capstone Project</button>
+        <button id="two" onclick="window.location.href='FILES/EMMIL FRANZ RESUME.pdf'" target="_blank">View My Resume</button>
         </div>
         </div>
         <img src="IMAGES/RESUME PICTURE.png" alt="Profile Picture">
     </div>
 
-    <div class="ABOUT_ME">
-    <h1>About Me</h1>
+    <div id="ABOUT_ME">
+    <h1>About  <span>Me</span></h1>
 
     <p>I am a Bachelor of Science in Information Technology graduate with internship
         experience in Controls Assurance, where I gained practical exposure to IT controls,
