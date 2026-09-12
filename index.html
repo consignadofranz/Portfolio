@@ -153,7 +153,7 @@
             border: 1px solid #1f3b50;
             border-radius: 10px;
             padding: 25px;
-            width: 300px;
+            width: 350px;
         }
         
         .Skill-CyberSec ul{
@@ -170,7 +170,7 @@
             border: 1px solid #1f3b50;
             border-radius: 10px;
             padding: 25px;
-            width: 300px;
+            width: 350px;
         }
         .Skill-WebDev ul{
             margin-top: 10px;
@@ -186,7 +186,7 @@
             border: 1px solid #1f3b50;
             border-radius: 10px;
             padding: 25px;
-            width: 300px;
+            width: 350px;
         }
         .Tools ul{
             margin-top: 10px;
@@ -207,6 +207,117 @@
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 0 20px rgba(77, 166, 255, 0.35);
         }
+
+        #internship {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+        }
+
+        #internship h1 {
+            margin-bottom: 40px;
+        }
+
+        .internship {
+            border-left: 2px solid #4da6ff;
+            padding-left: 25px;
+        }
+
+        .internship h2 {
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .internship .company {
+            color: #4da6ff;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .internship .type {
+            color: #bdbdbd;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .internship ul {
+            padding-left: 20px;
+        }
+
+        .internship li {
+            color: #bdbdbd;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .internship li::marker {
+            color: #4da6ff;
+        }
+
+        .Certifications {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+        }
+
+       #education {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+        }
+
+        #education h1 {
+    color: white;
+    margin-bottom: 30px;
+}
+
+        .education-card {
+            background-color: #071827;
+            border: 1px solid #1f3b50;
+            border-radius: 10px;
+            padding: 25px;
+
+            transition: 0.3s ease;
+        }
+
+        .education-card h2 {
+            color: #4da6ff;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #bdbdbd;
+            font-size: 17px;
+        }
+
+        /* Hover Effect */
+        .education-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 20px rgba(77, 166, 255, 0.25);
+        }
+
+        .contact {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+            justify-content: center;
+            text-align: center;
+        }
+        .contact p{
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        footer {
+            border-top: 1px solid #1f3b50;
+            padding: 30px 20px;
+            text-align: center;
+            color: #6f91ad;
+            background-color: #050e18;
+        }
+
         /* MOBILE POV */
         @media (max-width: 768px) {
 
@@ -240,6 +351,7 @@
             <li><a href="#ABOUT_ME">About Me</a></li>
             <li><a href="snap.html">Snapshot</a></li>
             <li><a href="FILES/EMMIL FRANZ RESUME.pdf" target="_blank">Resume</a></li>
+            <li><a href="#internship">Internship</a></li>:
         </ul>
     </nav>
 
@@ -296,7 +408,7 @@
 
         <div class="skills-container">
         <div class="Skill-CyberSec">
-            <h2>Cybersecurity</h2>
+            <h2>Cybersecurity | IT Audit</h2>
             <ul>
                 <li>Information Security Controls</li>
                 <li>Risk Management</li>
@@ -305,6 +417,9 @@
                 <li>Vulnerability Assessment</li>
                 <li>Access Control</li>
                 <li>Basic Networking</li>
+                <li>COBIT 2019</li>
+                <li>BSP Regulatory Guidelines</li>
+                <li>Data Privacy</li>
             </ul>  
         </div>
 
@@ -336,6 +451,48 @@
         </div>
         </div>
     </div>
+
+    <div id="internship">
+
+    <h1>My Internship <span>Experience</span></h1>
+
+    <div class="internship">
+
+        <h2>Controls Assurance Intern</h2>
+
+        <p class="company">Deloitte Philippines</p>
+
+        <p class="type">Internship</p>
+
+        <ul>
+            <li>Reviewed documents related to IT controls, data privacy.</li>
+            <li>Prepared Minutes of Meeting and supporting documentation.</li>
+            <li>Collaborated in reviewing PII-related requirements and processes.</li>
+            <li>Created and maintained Excel reports.</li>
+            <li>Collaborated with a team to ensure compliance with regulatory requirements.</li>
+            <li>Gained exposure to risk, compliance, IT controls, and information security.</li>
+        </ul>
+    </div>
+</div>
+
+        <div id="education">
+
+    <h1>My <span>Education</span></h1>
+
+    <div class="education-card">
+        <h2>BS Information Technology</h2>
+        <p>STI College of Las Piñas</p>
+    </div>
+</div>
+
+    <div class="contact">
+        <h1>Contact <span>Me</span></h1>
+        <p>Email: <span>consginadofranz@gmail.com</span> | Phone: <span>+63 976 656 6775</span></p>
+    </div>
+
+    <footer>
+    <p>© 2026 Emmil Consignado. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
