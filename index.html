@@ -442,6 +442,31 @@
             padding: 20px;
         }
 
+        #Certifications .cert-img {
+  border-radius: 8px;
+  object-fit: contain;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin-bottom: 15px;
+}
+
+#Certifications .cert-btn {
+  padding: 10px 22px;
+  background: transparent;
+  color: #3fa9ff;
+  border: 2px solid #3fa9ff;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#Certifications .cert-btn:hover {
+  background: #3fa9ff;
+  color: #000;
+}
+
         footer {
             border-top: 1px solid #1f3b50;
             padding: 30px 20px;
@@ -457,6 +482,45 @@
         }
 
 
+
+        /* HOW I INVESTIGATE (inside Continuous Learning) */
+        .investigate {
+            margin-top: 20px;
+            padding: 14px 18px;
+            background-color: #071827;
+            border: 1px solid #4da6ff;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .investigate summary {
+            cursor: pointer;
+            color: #4da6ff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .investigate h4 {
+            margin: 18px 0 6px;
+            color: #4da6ff;
+        }
+
+        .investigate ol,
+        .investigate ul {
+            margin: 8px 0 10px 25px;
+            line-height: 1.8;
+            color: #bdbdbd;
+        }
+
+        .investigate li::marker {
+            color: #4da6ff;
+        }
+
+        .investigate p {
+            margin-top: 10px;
+            color: #bdbdbd;
+        }
+
         /* MOBILE POV */
         @media (max-width: 768px) {
 
@@ -470,6 +534,39 @@
             #name {
                 font-size: 38px;
             }
+
+            .navbar {
+                flex-wrap: wrap;
+                gap: 15px;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .skills-container,
+            .learning-container {
+                flex-direction: column;
+            }
+
+            .Skill-CyberSec,
+            .Skill-WebDev,
+            .Tools {
+                width: 100%;
+            }
+
+            #ABOUT_ME,
+            .SKILLS,
+            #continues-learning,
+            #internship,
+            #Certifications,
+            #education {
+                padding: 30px 20px;
+            }
+
 
             img {
                 width: 220px;
@@ -488,9 +585,13 @@
 
         <ul class="nav-links">
             <li><a href="#ABOUT_ME">About Me</a></li>
-            <li><a href="snap.html">Snapshot</a></li>
             <li><a href="FILES/Emmil_Franz__Consignado_Resume.pdf" target="_blank">Resume</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#continues-learning">Learning</a></li>
             <li><a href="#internship">Internship</a></li>
+            <li><a href="#Certifications">Certifications</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -542,7 +643,7 @@
         technology and security challenges.</p>
 </div>
 
-    <div class="SKILLS">
+    <div class="SKILLS" id="skills">
         <h1>My <span>Skills</span></h1>
 
         <div class="skills-container">
@@ -639,13 +740,55 @@
                 <li>SOC L1 Alert Reporting</li>
                 <li>Introduction to EDR</li>
                 <li>Introduction to SIEM</li>
-                <li>Introduction to Phising</li>
-                <p>Notes: This path is currently on pause.</p>
+                <li>Introduction to Phishing</li>
             </ul>
-            <button onclick="window.location.href='https://tryhackme.com/p/consignadofranz?utm_campaign=social_share&utm_medium=social&utm_content=profile&cardVersion=e83361071381&utm_source=copy&sharerId=6aa922841da1d0ab55b658f9'" target="_blank">View My TryHackMe Profile</button>
+            <p style="margin-top:10px;">Notes: This path is currently on pause.</p>
+            <button onclick="window.open('https://tryhackme.com/p/consignadofranz', '_blank', 'noopener,noreferrer')">View My TryHackMe Profile</button>
         </div>
-
     </div>
+<details class="investigate">
+  <summary>How I Investigate Alerts</summary>
+  <p><em>Based on hands-on practice in TryHackMe SOC labs.</em></p>
+
+  <h4>Getting Started</h4>
+  <ol>
+    <li>Review the playbook and note when escalation is needed and when it isn't</li>
+    <li>Take ownership of alerts from the dashboard, starting with the highest severity</li>
+  </ol>
+
+  <h4>Firewall Alerts</h4>
+  <ol>
+    <li>Check the source IP's activity in Splunk</li>
+    <li>Check the action taken: blocked by the blocklist or allowed</li>
+    <li>Check whether the destination IP is malicious</li>
+    <li>Check the URL the employee tried to open</li>
+  </ol>
+
+  <h4>Phishing Email Alerts</h4>
+  <ol>
+    <li>Review the email content</li>
+    <li>Check the legitimacy of the sender</li>
+    <li>Check the receiver's email activity for past conversations with that sender</li>
+    <li>Inspect embedded URLs and attachments, including shortened links (e.g., Bitly) that hide the real destination</li>
+    <li>If malicious, escalate quickly while continuing the investigation</li>
+    <li>Check whether the attachment was opened or executed</li>
+    <li>If executed, quarantine the affected user</li>
+    <li>Search Splunk for everyone who received the same email and who executed it</li>
+    <li>If more than one user is affected, treat it as a single incident, quarantine them, and alert the affected users</li>
+  </ol>
+
+  <h4>Documenting an Escalation (5Ws)</h4>
+  <ul>
+    <li><strong>When</strong> the alert was triggered</li>
+    <li><strong>What</strong> the alert is about</li>
+    <li><strong>Who</strong> is affected</li>
+    <li><strong>Where</strong> the alert appeared</li>
+    <li><strong>Why</strong> it was triggered</li>
+  </ul>
+
+  <p><strong>Tools:</strong> Splunk, URL scanner, TryDetectThis (TryHackMe)</p>
+</details>
+
 </div>
 
     <div id="internship">
@@ -674,10 +817,20 @@
 </div>
 
 <div id="Certifications">
-    <h1>My <span>Certifications</span></h1>
+  <h1>My <span>Certifications</span></h1>
 
-    
-    </div>
+  <img class="cert-img"
+       src="IMAGES/Introduction_to_Cybersecurity_certificate_consignadoemmil2002-gmail-com_7d4cc2ad-01e2-47c3-83d9-c6d2c1d3720e.png"
+       alt="Cisco Introduction to Cybersecurity certificate"
+       width="300">
+
+  <h3><span>Introduction to Cybersecurity</span></h3>
+  <p>Cisco Networking Academy | Completed 22 Oct 2026</p>
+
+  <button class="cert-btn"
+          onclick="window.open('IMAGES/Introduction_to_Cybersecurity_certificate_consignadoemmil2002-gmail-com_7d4cc2ad-01e2-47c3-83d9-c6d2c1d3720e.png', '_blank', 'noopener,noreferrer')">
+    View Certificate
+  </button>
 </div>
 
         <div id="education">
@@ -690,7 +843,7 @@
     </div>
 </div>
 
-    <div class="contact">
+    <div class="contact" id="contact">
         <h1>Contact <span>Me</span></h1>
         <p>Email: <span>consignadofranz@gmail.com</span> | Phone: <span>+63 976 656 6775</span> | <a href="https://www.linkedin.com/in/emmil-consignado-92960a327/" target="_blank">LinkedIn</a> </p>
     </div>
