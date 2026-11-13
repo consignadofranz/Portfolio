@@ -104,7 +104,7 @@
             margin-top: 20px;
         }
 
-        #button button {
+        #button button  {
             background-color: #4da6ff;
             height: 40px;
             width: 250px;
@@ -363,6 +363,41 @@
             border-radius: 5px;
             cursor: pointer;
             transition: 0.3s;
+        }
+        #training-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: transparent;
+            color: #4da6ff;
+            border: 1.5px solid #4da6ff;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: inherit;
+        }
+
+        /* Hover Effect */
+        #training-btn:hover {
+            background: #4da6ff;
+            color: #121212;
+            box-shadow: 0 0 15px rgba(77, 166, 255, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* Click Effect */
+        #training-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 0 8px rgba(77, 166, 255, 0.25);
+        }
+
+        /* Keyboard Accessibility */
+        #training-btn:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 4px;
         }
         .java {
             background-color: #071827;
@@ -745,6 +780,8 @@
                 <li>Pyramid of Pain</li>
                 <li>Cyber kill chain </li>
                 <li>Unified Kill Chain(UKC)</li>
+                <li>Phishing Analysis Fundamentals</li>
+                <li>Phishing Emails in action</li>
             </ul>
             <p style="margin-top:10px;">Notes: This path is currently on progress.</p>
             <button onclick="window.open('https://tryhackme.com/p/consignadofranz', '_blank', 'noopener,noreferrer')">View My TryHackMe Profile</button>
@@ -791,7 +828,11 @@
   </ul>
 
   <p><strong>Tools:</strong> Splunk, URL scanner, TryDetectThis (TryHackMe)</p>
+  <br>
+  <button id="training-btn" onclick="window.open('evidence.html')">Hands On Training/Labs</button>
 </details>
+
+    
 
 </div>
 
