@@ -1,14 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hands-on cybersecurity lab evidence by Emmil Franz. A phishing alert investigation using alert analysis and Splunk log review.">
+  <title>Hands-On Training &amp; Labs | Emmil Franz</title>
+  <link rel="stylesheet" href="evidence.css">
 </head>
 <body>
-    <head>
-        <h1>Phishing Alert</h1>
-    </head>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Back to Emmil Franz portfolio"><span>EFC.</span></a>
+    <a class="back-button" href="index.html"><span aria-hidden="true">←</span> Back to Portfolio</a>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <p class="eyebrow">PORTFOLIO / HANDS-ON TRAINING</p>
+      <h1>Cybersecurity Labs &amp; <span>Practical Evidence</span></h1>
+      <p class="hero-copy">
+        A collection of hands-on exercises focused on security alert triage,
+        phishing investigation, log analysis, and incident documentation.
+      </p>
+      <div class="tag-row" aria-label="Skills demonstrated">
+        <span>Phishing Analysis</span>
+        <span>Splunk</span>
+        <span>Alert Triage</span>
+        <span>Incident Documentation</span>
+      </div>
+    </section>
+
+    <section class="project-intro" aria-labelledby="project-title">
+      <div>
+        <p class="section-kicker">LAB CASE STUDY</p>
+        <h2 id="project-title">Investigating a Suspicious Microsoft Sign-in Email</h2>
+      </div>
+      <p class="project-summary">
+        I reviewed a simulated phishing alert, examined the sender and embedded URL,
+        then searched firewall telemetry in Splunk to determine whether the destination
+        connection was allowed.
+      </p>
+    </section>
+
+    <section class="findings" aria-label="Investigation highlights">
+      <article class="finding">
+        <span class="finding-label">Alert ID</span>
+        <strong>8817</strong>
+      </article>
+      <article class="finding">
+        <span class="finding-label">Incident type</span>
+        <strong>Phishing</strong>
+      </article>
+      <article class="finding">
+        <span class="finding-label">Severity</span>
+        <strong class="severity">Medium</strong>
+      </article>
+      <article class="finding">
+        <span class="finding-label">Firewall result</span>
+        <strong class="warning">Connection allowed</strong>
+      </article>
+    </section>
+
+    <section class="analysis-section" aria-labelledby="analysis-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">INVESTIGATION WALKTHROUGH</p>
+          <h2 id="analysis-title">Evidence &amp; Analysis</h2>
+        </div>
+        <p class="section-note">Select any image to open the full-size screenshot.</p>
+      </div>
+
+      <div class="evidence-grid">
+        <article class="evidence-card evidence-card-wide">
+          <a class="image-link" target="_blank" rel="noopener">
+            <img src="Screenshots FOR SOC simulator/Phishing .png" alt="Phishing alert case report showing the suspicious email details for alert 8817" loading="lazy">
+          </a>
+          <div class="card-copy">
+            <span class="step">01 / EMAIL REVIEW</span>
+            <h3>Review the suspicious email</h3>
+            <p>
+              The message impersonated Microsoft and used
+              <code>no-reply@m1crosoftsupport.co</code>. The number “1” replaces
+              the letter “i” in the brand name, a typosquatting indicator.
+              The email contained a sign-in link to the same suspicious domain.
+            </p>
+          </div>
+        </article>
+
+        <article class="evidence-card">
+          <a class="image-link" target="_blank" rel="noopener">
+            <img src="Screenshots FOR SOC simulator/phising1.png" alt="Splunk search result showing firewall telemetry for the suspicious URL" loading="lazy">
+          </a>
+          <div class="card-copy">
+            <span class="step">02 / SIEM INVESTIGATION</span>
+            <h3>Search firewall logs in Splunk</h3>
+            <p>
+              I searched for the suspicious URL and identified a matching firewall
+              event. The event showed traffic from <code>10.20.2.25</code> to
+              <code>45.148.10.131</code> over TCP port 443, with the action recorded
+              as <strong>allowed</strong>.
+            </p>
+          </div>
+        </article>
+
+        <article class="evidence-card">
+          <a class="image-link" href="evidence-assets/case-analysis-feedback.png" target="_blank" rel="noopener">
+            <img src="Screenshots FOR SOC simulator/Result phising.png" alt="Lab platform feedback for the phishing incident case report" loading="lazy">
+            <span class="zoom-hint">Open full image ↗</span>
+          </a>
+          <div class="card-copy">
+            <span class="step">03 / REPORTING</span>
+            <h3>Document findings and response</h3>
+            <p>
+              I classified the alert as a true positive and documented the supporting
+              indicators. Response actions included blocking the malicious URL,
+              domain, and destination IP, reviewing sign-in activity, and resetting
+              credentials if the user had submitted them.
+            </p>
+          </div>
+        </article>
+
+        <article class="evidence-card evidence-card-wide">
+          <a class="image-link"  target="_blank" rel="noopener">
+            <img src="Screenshots FOR SOC simulator/OverAll.png" alt="Overall lab results showing true positive and false positive identification rates" loading="lazy">
+          </a>
+          <div class="card-copy">
+            <span class="step">04 / LAB RESULTS</span>
+            <h3>Review classification accuracy</h3>
+            <p>
+              The lab dashboard recorded a 100% true-positive identification rate
+              and a 100% false-positive identification rate for the alert types
+              shown in this exercise.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="takeaways">
+      <p class="section-kicker">WHAT I PRACTICED</p>
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Identifying typosquatting and brand-impersonation indicators in email.</li>
+        <li>Searching SIEM data for URL and firewall activity.</li>
+        <li>Interpreting connection actions, source and destination IPs, and ports.</li>
+        <li>Writing evidence-based incident classifications and remediation steps.</li>
+      </ul>
+      <p class="disclaimer">
+        Note: This is a training-lab exercise using simulated security data. It is
+        presented as practical learning evidence, not as production incident-response
+        experience.
+      </p>
+    </section>
+
+    <footer class="page-footer">
+      <span>© 2026 Emmil Franz</span>
+      <a href="index.html">← Return to main portfolio</a>
+    </footer>
+  </main>
 </body>
 </html>
